@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<title>Gestión de Oficina - Cañada Rica</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript">
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="#">Sistema de Gestión</a></div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="defaultNavbar1">
+      <!-- este es el menu principal-->
+      
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+<div class="container-fluid">
+  <div class="row">
+  <center>
+    <form id="form1" name="form1" method="post" action="php/altacuenta.php">
+      <p>
+        <center><label for="textfield">Cuentas:</center><br>
+          <br>
+         <strong> Apellido:</strong></label>
+        <input name="Apellido" type="text" id="Apellido" onBlur="MM_validateForm('Apellido','','R');return document.MM_returnValue">
+        <strong>Nombre
+          <label for="textfield2">:</label>
+          </strong>
+  <input name="Nombre" type="text" id="Nombre" onBlur="MM_validateForm('Nombre','','R');return document.MM_returnValue">
+        <strong>Tipo cuenta
+          <label for="textfield3">:</label>
+          </strong>
+  <select type="text" name="Tipo" id="Tipo">
+   <option value="">-Seleccionar-</option>
+    <option value="Usuario">Usuario</option>
+    <option value="Administrador">Administrador</option>
+    <option value="Persona Egreso">Persona Egreso</option>
+   </select> <br><br>
+        <label for="textfield4">Nombre Usuario:</label>
+        <input name="Usuario" type="text" id="Usuario" value="Opcional">
+        <label for="textfield5">Clave:</label>
+        <input name="Clave" type="text" id="Clave" value="Opcional">
+        <label for="textfield">Email:</label>
+        <input type="text" name="Email" id="Email" value="Opcional">
+      </p>
+      <p>&nbsp;</p>
+      <p>
+        <input type="submit" href="php/altacuenta.php"  name="Registrar" id="Registrar" value="Registrar">
+         <a href="inicioAdministrador.html">   <input type="button"  name="Salir" id="Salir" value="Salir"></A>
+      </p>
+      <p>&nbsp;</p>
+    </form>
+  </center>
+    <div class="col-md-offset-2 col-md-8">
+     
+    </div>
+  </div>
+  <hr>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.2.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
